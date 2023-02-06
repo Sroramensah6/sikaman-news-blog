@@ -1,115 +1,154 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import Link from 'next/link'
 
-export default function Home() {
+// components
+import Layout from '../components/layout'
+import { Banner,  PostCard } from '../components'
+
+// get data
+import { getSortedPostsData } from '../lib/posts'
+
+// logo
+import logo from '../images/icon.png'
+
+const styles = {
+  wrapper: `mx-auto`,
+  main: `flex justify-center`,
+  container:`flex-1 max-w-7xl mt-[2rem]`,
+  categoryContainer: `pl-4  mb-4`,
+  divider: 'h-1 flex-1 flex w-full bg-[#F2F3F2] lg:my-16 my-10',
+  category_border: `border-b border-[#290916] mt-4 border-2 flex w-10`,
+  category: `text-3xl lg:text-[3rem] font-mediumSerif hover:text-[#290916]`,
+  postsList : 'grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-5 items-start'
+}
+
+export default function Home ({ allPostsData }) {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <Layout home siteTitle={'Sikaman Media - Mfitiaseɛ'} image={logo} description={'Read local news in the Ghanaian Twi vernacular'}>
+      <div className={styles.wrapper}>
+        <Banner />
+        <div className={styles.main}>
+          <div className={styles.container}>
+            <div className={styles.postsList}>
+              {allPostsData
+                .filter((post) => {
+                  return (
+                    post.category === 'Nsɛm Ahodoɔ' ||
+                    post.category === 'Apomuden mu nsɛm' ||
+                    post.category === 'Ɛdwadie' ||
+                    post.category === 'Amammreɛ/Amanneɛ' ||
+                    post.category === 'Amanɔnne nsem'
+                  )
+                }).slice(0, 6).map(post => <PostCard key={post.id} post={post} />)
+              }
+            </div>
+            <span className={styles.divider}></span>
+            <div className={styles.space}>
+              <div className={styles.categoryContainer}>
+                <Link href={'/category/nsem-ahoduo'}>
+                  <h1 className={styles.category}>Nsɛm Ahodoɔ</h1>
+                  <span className={styles.category_border} />
+                </Link>
+              </div>
+              <div className={styles.postsList}>
+                {allPostsData
+                  .filter((post) => post.category === 'Nsɛm Ahodoɔ')
+                  .slice(0, 4)
+                  .map(post => <PostCard key={post.id} post={post} />)
+                }
+              </div>
+            </div>
+            <span className={styles.divider}></span>
+            <div className={styles.space}>
+              <div className={styles.categoryContainer}>
+                <Link href={'/category/apomuden'}>
+                  <h1 className={styles.category}>Apomuden</h1>
+                  <span className={styles.category_border} />
+                </Link>
+              </div>
+              <div className={styles.postsList}>
+                {allPostsData
+                  .filter((post) => post.category === 'Apomuden mu nsɛm')
+                  .slice(0, 4)
+                  .map(post => <PostCard key={post.id} post={post} />)
+                }
+              </div>
+            </div>
+            <span className={styles.divider}></span>
+            <div className={styles.space}>
+              <div className={styles.categoryContainer}>
+                <Link href={'/category/edwadie'}>
+                  <h1 className={styles.category}>Ɛdwadie</h1>
+                  <span className={styles.category_border} />
+                </Link>
+              </div>
+              <div className={styles.postsList}>
+                {allPostsData
+                  .filter((post) => post.category === 'Ɛdwadie')
+                  .slice(0, 4)
+                  .map(post => <PostCard key={post.id} post={post} />)
+                }
+              </div>
+            </div>
+            <span className={styles.divider}></span>
+            <div className={styles.space}>
+              <div className={styles.categoryContainer}>
+                <Link href={'/category/amammree'}>
+                  <h1 className={styles.category}>Amammreɛ</h1>
+                  <span className={styles.category_border} />
+                </Link>
+              </div>
+              <div className={styles.postsList}>
+                {allPostsData
+                  .filter((post) => post.category === 'Amammreɛ/Amanneɛ')
+                  .slice(0, 4)
+                  .map(post => <PostCard key={post.id} post={post} />)
+                }
+              </div>
+            </div>
+            <span className={styles.divider}></span>
+            <div className={styles.space}>
+              <div className={styles.categoryContainer}>
+                <Link href={'/category/amanonne'}>
+                  <h1 className={styles.category}>Amanɔnne</h1>
+                  <span className={styles.category_border} />
+                </Link>
+              </div>
+              <div className={styles.postsList}>
+                {allPostsData
+                  .filter((post) => post.category === 'Amanɔnne nsem')
+                  .slice(0, 4)
+                  .map(post => <PostCard key={post.id} post={post} />)
+                }
+              </div>
+            </div>
+            <span className={styles.divider}></span>
+            <div className={styles.space}>
+              <div className={styles.categoryContainer}>
+                <Link href={'/category/agokansie'}>
+                  <h1 className={styles.category}>Agokansie</h1>
+                  <span className={styles.category_border} />
+                </Link>
+              </div>
+              <div className={styles.postsList}>
+                {allPostsData
+                  .filter((post) => post.category === 'Agokansie')
+                  .slice(0, 4)
+                  .map(post => <PostCard key={post.id} post={post} />)
+                }
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        footer img {
-          margin-left: 0.5rem;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-        }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
+      </div>
+    </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const allPostsData = await getSortedPostsData()
+  return {
+    props: {
+      allPostsData,
+    }
+  }
 }
