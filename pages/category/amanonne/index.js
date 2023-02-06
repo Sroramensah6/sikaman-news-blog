@@ -8,7 +8,7 @@ export default function Dutanyawo({ allPostsData }) {
     return <Post_Template siteTitle={'Sikaman Media - Amammreɛ'} allPostsData={allPostsData} title={'Amammreɛ'} />
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const allPostsData = await  getCategoryPostsData('Amanɔnne nsem')
     return {
       props: {

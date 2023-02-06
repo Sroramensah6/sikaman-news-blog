@@ -8,7 +8,7 @@ export default function Asitsanyawo({ allPostsData }) {
     return <Post_Template siteTitle={'Sikaman Media - Ɛdwadie'} allPostsData={allPostsData} title={'Ɛdwadie'} />
 }
  
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const allPostsData = await  getCategoryPostsData('Ɛdwadie')
     return {
       props: {
