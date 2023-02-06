@@ -2,17 +2,14 @@ import dayjs from 'dayjs'
 import React from 'react'
 import Link from 'next/link'
 import ReactAudioPlayer from 'react-audio-player'
-import AudioPlayer from 'react-h5-audio-player'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
 // icon
 import { GrLinkedin } from 'react-icons/gr'
 import { FaFacebook  } from 'react-icons/fa'
 import { IoLogoTwitter } from 'react-icons/io'
-import { AiFillPlayCircle, AiOutlineWhatsApp } from 'react-icons/ai'
+import { AiOutlineWhatsApp } from 'react-icons/ai'
 import { FacebookMessengerShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from 'next-share'
-
-import 'react-h5-audio-player/lib/styles.css'
 
 const styles = {
     wrapper: `flex items-center justify-center flex-[3] border-l border-r`,

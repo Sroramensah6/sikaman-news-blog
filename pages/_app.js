@@ -7,7 +7,6 @@ import { DataProvider } from "../context"
 import { useProgressStore } from "../store"
 
 import '../styles/globals.css'
-import '@madzadev/audio-player/dist/index.css'
 
 axios.defaults.baseURL = 'https://us-central1-tinasrora.cloudfunctions.net/api'
 
