@@ -13,7 +13,7 @@ export default function Post({ postData, Category }) {
         <Layout siteTitle={postData.title} description={postData.body_summary} image={postData.headerImage} >
             <div className={styles.content}>
                 <Article data={postData} origin={origin} />
-                <Recommendations data={Category.slice(0, 5)} />
+                <Recommendations data={Category?.slice(0, 5)} />
             </div>
         </Layout>
     )
@@ -28,8 +28,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const postData = await getPostData(params.id)
-    const Category = await getCategoryRecommendationPostsData(postData.category)
+    const postData = await getPostData(params?.id)
+    const Category = await getCategoryRecommendationPostsData(postData?.category)
     return {
         props: {
             postData,
