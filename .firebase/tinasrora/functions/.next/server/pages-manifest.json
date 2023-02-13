@@ -1,0 +1,15 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/category/agokansie": "pages/category/agokansie.js",
+  "/category/amanonne": "pages/category/amanonne.js",
+  "/category/nsem-ahoduo": "pages/category/nsem-ahoduo.js",
+  "/category/apomuden": "pages/category/apomuden.js",
+  "/category/edwadie": "pages/category/edwadie.js",
+  "/category/amammree": "pages/category/amammree.js",
+  "/[id]": "pages/[id].js",
+  "/_document": "pages/_document.js",
+  "/post/[id]": "pages/post/[id].js",
+  "/": "pages/index.js",
+  "/404": "pages/404.html"
+}

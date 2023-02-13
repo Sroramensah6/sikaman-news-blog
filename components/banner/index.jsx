@@ -21,9 +21,7 @@ export default function Banner() {
                         Yɛn 'kurom kasa' yɛ adeɛ titirie a ɛma yɛda nso sɛ ɔmain na ɛkyerɛ yɛn asetena ne amammerɛ.
                     </h3>
                     <button className={styles.accentedButton}>
-                        <Link href={'/websaet-yi-botaee-twi'}>
-                            Start Reading
-                        </Link>
+                        <Link href={'/websaet-yi-botaee-twi'}>Kenkan</Link>
                     </button>
                 </div>
                 <Image 

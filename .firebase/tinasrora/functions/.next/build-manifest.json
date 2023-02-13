@@ -1,0 +1,83 @@
+{
+  "polyfillFiles": [
+    "static/chunks/polyfills-c67a75d1b6f99dc8.js"
+  ],
+  "devFiles": [],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [
+    "static/WnnlNaxJFVUYbG0T--EEC/_buildManifest.js",
+    "static/WnnlNaxJFVUYbG0T--EEC/_ssgManifest.js"
+  ],
+  "rootMainFiles": [],
+  "pages": {
+    "/": [
+      "static/chunks/webpack-59c5c889f52620d6.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-5020794388548d5e.js",
+      "static/chunks/pages/index-1b5c2a8048784d87.js"
+    ],
+    "/[id]": [
+      "static/chunks/webpack-59c5c889f52620d6.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-5020794388548d5e.js",
+      "static/chunks/pages/[id]-8115c85dea5d55c1.js"
+    ],
+    "/_app": [
+      "static/chunks/webpack-59c5c889f52620d6.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-5020794388548d5e.js",
+      "static/css/e009b0310e9edd83.css",
+      "static/chunks/pages/_app-8b614a42d8b7858c.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack-59c5c889f52620d6.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-5020794388548d5e.js",
+      "static/chunks/pages/_error-8353112a01355ec2.js"
+    ],
+    "/category/agokansie": [
+      "static/chunks/webpack-59c5c889f52620d6.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-5020794388548d5e.js",
+      "static/chunks/pages/category/agokansie-790206d60d8f287e.js"
+    ],
+    "/category/amammree": [
+      "static/chunks/webpack-59c5c889f52620d6.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-5020794388548d5e.js",
+      "static/chunks/pages/category/amammree-82c7510c6ac3ddc2.js"
+    ],
+    "/category/amanonne": [
+      "static/chunks/webpack-59c5c889f52620d6.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-5020794388548d5e.js",
+      "static/chunks/pages/category/amanonne-63a5b62edda0cb92.js"
+    ],
+    "/category/apomuden": [
+      "static/chunks/webpack-59c5c889f52620d6.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-5020794388548d5e.js",
+      "static/chunks/pages/category/apomuden-e1384ee4d20eb4df.js"
+    ],
+    "/category/edwadie": [
+      "static/chunks/webpack-59c5c889f52620d6.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-5020794388548d5e.js",
+      "static/chunks/pages/category/edwadie-76cb91622b08971f.js"
+    ],
+    "/category/nsem-ahoduo": [
+      "static/chunks/webpack-59c5c889f52620d6.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-5020794388548d5e.js",
+      "static/chunks/pages/category/nsem-ahoduo-d1c6e5743fd0581e.js"
+    ],
+    "/post/[id]": [
+      "static/chunks/webpack-59c5c889f52620d6.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-5020794388548d5e.js",
+      "static/chunks/843-d85b79b6f00b6e90.js",
+      "static/chunks/pages/post/[id]-de5f083991798ef7.js"
+    ]
+  },
+  "ampFirstPages": []
+}
