@@ -26,9 +26,9 @@ const styles = {
     articleMainContainer: `flex flex-col gap-[1rem]`,
     bannerContainer: `h-[28rem] w-full grid center overflow-hidden mb-[2rem]`,
     bannerImage: `object-cover h-auto w-full flex flex-1 `,  
-    title: `font-bold text-3xl font-mediumSerif text-[#290916]`,
+    title: `font-bold text-3xl font-mediumSerif text-[#290916] font-mediumSerif`,
     subtitle: `font-mediumSerifItalic text-[1.4rem] text-[#292929] font-mediumSerif`,
-    article: `font-mediumSerif text-[#292929] text-[1.4rem]`,
+    article: `font-mediumSerif text-[#292929] text-[1.3rem]`,
 }
 
 export default function Article({ data, origin }) {
