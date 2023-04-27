@@ -3,8 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
-// icons
-import { AiOutlineSearch } from 'react-icons/ai'
+import NewsCard from '../news_card'
 
 const styles = {
     wrapper: 'hidden lg:block h-screen min-w-[10rem] max-w-[30rem] flex-[1.2] p-[2rem] overflow-scroll w-full',
@@ -44,27 +43,7 @@ export default function Recommendations ({ data }) {
                     <span className='border-b border-[#290916] mt-1 border-2 flex w-10'></span>
                 </div>
                 <div className={styles.articlesContainer}>
-                    {data?.map((article) => (
-                        <Link key={article.id} href={`/post/${article.id}`}>
-                            <div key={article.id} className={styles.articlesContentWrapper}>
-                                <div className={styles.articlesContent}>
-                                    <div className={styles.recommendationTitle}>{article.title}</div>
-                                    <div className={styles.detailsContainer}>
-                                        <span className={styles.articleDetails}>{dayjs(article.createdAt).format('MMMM DD YYYY')} • {article.reading_time} • <span className={styles.category}>{article.category}</span></span>
-                                    </div>
-                                </div>
-                                <div className={styles.recommendationThumbnailContainer}>
-                                    <Image
-                                        width={500}
-                                        height={400} 
-                                        alt={'article Image'}
-                                        src={article.headerImage}
-                                        className={styles.recommendationThumbnail}
-                                    />
-                                </div>
-                            </div>
-                        </Link>
-                    ))}
+                    {data?.map((article) => <NewsCard p={false} key={article.id} post={article} />)}
                 </div>
             </div>
         </div>

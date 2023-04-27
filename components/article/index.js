@@ -26,9 +26,9 @@ const styles = {
     articleMainContainer: `flex flex-col gap-[1rem]`,
     bannerContainer: `h-[28rem] w-full grid center overflow-hidden mb-[2rem]`,
     bannerImage: `object-cover h-auto w-full flex flex-1 `,  
-    title: `font-bold text-3xl font-mediumSerif text-[#290916] font-mediumSerif`,
+    title: `font-bold text-3xl font-mediumSerif`,
     subtitle: `font-mediumSerifItalic text-[1.4rem] text-[#292929] font-mediumSerif`,
-    article: `font-mediumSerif text-[#292929] text-[1.3rem]`
+    article: `font-mediumSerif text-[#292929] text-[1.4rem]`,
 }
 
 export default function Article({ data, origin }) {
@@ -70,7 +70,7 @@ export default function Article({ data, origin }) {
                 </div>
                 <div className={styles.articleMainContainer}>
                     <h1 className={styles.title}>{data?.title}</h1>
-                    <article className={`${styles.article} prose prose-img:rounded-t-xl prose-img:mb-0 prose-img:mt-0 prose-img:w-full prose-em:text[.1rem] prose-headings:underline prose-a:text-blue-600`} dangerouslySetInnerHTML={{ __html: data?.body }} />
+                    <article className={`${styles.article} prose prose-img:rounded-t-xl prose-img:mb-0 prose-img:mt-0 prose-img:w-full prose-p:text-[1.1rem] prose-em:text[.1rem] prose-headings:underline prose-a:text-blue-600`} dangerouslySetInnerHTML={{ __html: data?.body }} />
                 </div>
             </div>
         </div>

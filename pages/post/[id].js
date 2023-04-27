@@ -1,6 +1,8 @@
+import _ from 'lodash'
+
 import Layout from '../../components/layout'
 import { Article, Recommendations } from '../../components'
-import { getAllPostIds, getCategoryRecommendationPostsData, getPostData } from '../../lib/posts'
+import { getCategoryRecommendationPostsData, getPostData } from '../../lib/posts'
 
 const styles = {
     content: `flex`
@@ -29,7 +31,14 @@ export default function Post({ postData, Category }) {
 
 export async function getServerSideProps({ params }) {
     const postData = await getPostData(params?.id)
-    const Category = await getCategoryRecommendationPostsData(postData?.category)
+    let Category = await getCategoryRecommendationPostsData(postData.category)
+
+    const contains = ({ id }, query) => {
+        if (id?.includes(query)) return false
+        return true
+    }
+    Category = _.filter(Category, data => contains(data, postData.id))
+    
     return {
         props: {
             postData,

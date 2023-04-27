@@ -1,7 +1,6 @@
 import React from 'react'
-import { Article, Recommendations } from '../components'
 
-import Layout from '../components/layout'
+import { Article, Layout, Recommendations } from '../components'
 
 import { getSortedPostsData } from '../lib/posts'
 import { getAllPostIds, getPostData } from '../lib/miafetadodzinu'

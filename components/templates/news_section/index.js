@@ -1,6 +1,6 @@
 // component 
 import Layout from "../../layout"
-import PostCard from "../../postCard"
+import NewsCard from "../../news_card"
 
 // LOGO
 import logo from '../../../images/icon1.png'
@@ -11,8 +11,8 @@ const styles = {
     main: `flex justify-center`,
     categoryContainer: `mb-10 pl-5 `,
     container:`flex-1 max-w-7xl mt-[2rem]`,
-    category: `text-[3rem] font-mediumSerif text-[#290916]`,
-    category_border: `border-b border-[#290916] mt-2 border-2 flex w-10`,
+    category: `text-[2.5rem] font-mediumSerif text-[#290916]`,
+    category_border: `border-b border-[#290916] mt-0 border-2 flex w-10`,
     postsList : 'grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-5 items-start'
 }
   
@@ -26,7 +26,7 @@ export default function Post_Template({ allPostsData, siteTitle, title }) {
                         <span className={styles.category_border} />
                     </div>
                     <div className={styles.postsList}>
-                        {allPostsData?.map(post => <PostCard key={post.id} post={post} />)}
+                        {allPostsData?.map(post => <NewsCard key={post.id} post={post} />)}
                     </div>
                 </div>
             </div>

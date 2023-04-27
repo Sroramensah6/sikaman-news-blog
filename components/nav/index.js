@@ -6,9 +6,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
-import Logo from '../images/logo1.png'
+import Logo from '../../images/logo1.png'
 
-import { main_link } from '../route'
+import { main_link } from '../../route'
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },

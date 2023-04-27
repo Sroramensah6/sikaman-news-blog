@@ -1,8 +1,5 @@
-import Link from 'next/link'
-
 // components
-import Layout from '../components/layout'
-import { Banner,  PostCard } from '../components'
+import { Banner, Divider, Layout, MainCard, NewsCard, NewsThumbnail, SecondaryCard } from '../components'
 
 // get data
 import { getSortedPostsData } from '../lib/posts'
@@ -28,115 +25,31 @@ export default function Home ({ allPostsData }) {
         <Banner />
         <div className={styles.main}>
           <div className={styles.container}>
-            <div className={styles.postsList}>
-              {allPostsData
-                .filter((post) => {
-                  return (
-                    post.category === 'Nsɛm Ahodoɔ' ||
-                    post.category === 'Apomuden mu nsɛm' ||
-                    post.category === 'Ɛdwadie' ||
-                    post.category === 'Amammreɛ/Amanneɛ' ||
-                    post.category === 'Amanɔnne nsem'
-                  )
-                }).slice(0, 6).map(post => <PostCard key={post.id} post={post} />)
-              }
-            </div>
-            <span className={styles.divider}></span>
-            <div className={styles.space}>
-              <div className={styles.categoryContainer}>
-                <Link href={'/category/nsem-ahoduo'}>
-                  <h1 className={styles.category}>Nsɛm Ahodoɔ</h1>
-                  <span className={styles.category_border} />
-                </Link>
+            <div className="relative mb-8 pl-3 pr-3">
+              <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-5">
+                {allPostsData.slice(0, 1).map(post => <MainCard post={post} />)}
+                <div className="sm:col-span-4 hidden lg:block sm:grid-cols-2 lg:col-span-3">
+                  {allPostsData.slice(1, 3).map(post => <SecondaryCard post={post} />)}
+                </div>
               </div>
-              <div className={styles.postsList}>
-                {allPostsData
-                  .filter((post) => post.category === 'Nsɛm Ahodoɔ')
-                  .slice(0, 4)
-                  .map(post => <PostCard key={post.id} post={post} />)
-                }
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:grid lg:hidden ">
+                {allPostsData.slice(1, 3).map(post => <NewsCard key={post.id} post={post} />)}
               </div>
             </div>
-            <span className={styles.divider}></span>
-            <div className={styles.space}>
-              <div className={styles.categoryContainer}>
-                <Link href={'/category/apomuden'}>
-                  <h1 className={styles.category}>Apomuden</h1>
-                  <span className={styles.category_border} />
-                </Link>
-              </div>
-              <div className={styles.postsList}>
-                {allPostsData
-                  .filter((post) => post.category === 'Apomuden mu nsɛm')
-                  .slice(0, 4)
-                  .map(post => <PostCard key={post.id} post={post} />)
-                }
-              </div>
-            </div>
-            <span className={styles.divider}></span>
-            <div className={styles.space}>
-              <div className={styles.categoryContainer}>
-                <Link href={'/category/edwadie'}>
-                  <h1 className={styles.category}>Ɛdwadie</h1>
-                  <span className={styles.category_border} />
-                </Link>
-              </div>
-              <div className={styles.postsList}>
-                {allPostsData
-                  .filter((post) => post.category === 'Ɛdwadie')
-                  .slice(0, 4)
-                  .map(post => <PostCard key={post.id} post={post} />)
-                }
-              </div>
-            </div>
-            <span className={styles.divider}></span>
-            <div className={styles.space}>
-              <div className={styles.categoryContainer}>
-                <Link href={'/category/amammree'}>
-                  <h1 className={styles.category}>Amammreɛ</h1>
-                  <span className={styles.category_border} />
-                </Link>
-              </div>
-              <div className={styles.postsList}>
-                {allPostsData
-                  .filter((post) => post.category === 'Amammreɛ/Amanneɛ')
-                  .slice(0, 4)
-                  .map(post => <PostCard key={post.id} post={post} />)
-                }
-              </div>
-            </div>
-            <span className={styles.divider}></span>
-            <div className={styles.space}>
-              <div className={styles.categoryContainer}>
-                <Link href={'/category/amanonne'}>
-                  <h1 className={styles.category}>Amanɔnne</h1>
-                  <span className={styles.category_border} />
-                </Link>
-              </div>
-              <div className={styles.postsList}>
-                {allPostsData
-                  .filter((post) => post.category === 'Amanɔnne nsem')
-                  .slice(0, 4)
-                  .map(post => <PostCard key={post.id} post={post} />)
-                }
-              </div>
-            </div>
-            <span className={styles.divider}></span>
-            <div className={styles.space}>
-              <div className={styles.categoryContainer}>
-                <Link href={'/category/agokansie'}>
-                  <h1 className={styles.category}>Agokansie</h1>
-                  <span className={styles.category_border} />
-                </Link>
-              </div>
-              <div className={styles.postsList}>
-                {allPostsData
-                  .filter((post) => post.category === 'Agokansie')
-                  .slice(0, 4)
-                  .map(post => <PostCard key={post.id} post={post} />)
-                }
-              </div>
-            </div>
+            <NewsThumbnail slice_start={3} slice_end={9} posts={allPostsData} href={'/category/nsem-ahoduo'} />
+            <Divider />
+            <NewsThumbnail posts={allPostsData} title={'Nsɛm Ahodoɔ'} compare={'Nsɛm Ahodoɔ'} href={'/category/nsem-ahoduo'} />
+            <Divider />
+            <NewsThumbnail posts={allPostsData} title={'Apomuden'} compare={'Apomuden mu nsɛm'} href={'/category/apomuden'} />
+            <Divider />
+            <NewsThumbnail posts={allPostsData} title={'Ɛdwadie'} compare={'Ɛdwadie'} href={'/category/edwadie'} />
+            <Divider />
+            <NewsThumbnail posts={allPostsData} title={'Amammreɛ'} compare={'Amammreɛ/Amanneɛ'} href={'/category/amammree'} />
+            <Divider />
+            <NewsThumbnail posts={allPostsData} title={'Amanɔnne'} compare={'Amanɔnne nsem'} href={'/category/amanonne'} />
+            <Divider />
+            <NewsThumbnail posts={allPostsData} title={'Agokansie'} compare={'Agokansie'} href={'/category/agokansie'} />
+            <Divider />
           </div>
         </div>
       </div>
