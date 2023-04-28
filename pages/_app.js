@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect } from "react"
 import { useRouter } from "next/router"
+import { Analytics } from '@vercel/analytics/react'
 
 import { Progress } from "../components"
 import { DataProvider } from "../context"
@@ -35,7 +36,8 @@ export default function App ({ Component, pageProps }) {
     }, [router])
     return (
         <DataProvider>
-            <Progress  isAnimating={isAnimating} />
+            <Progress isAnimating={isAnimating} />
+            <Analytics />
             <Component {...pageProps} />
         </DataProvider>
     )
