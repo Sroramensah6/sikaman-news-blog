@@ -14,7 +14,7 @@ const styles = {
   categoryContainer: `pl-4  mb-4`,
   divider: 'h-1 flex-1 flex w-full bg-[#F2F3F2] lg:my-16 my-10',
   category_border: `border-b border-[#290916] mt-4 border-2 flex w-10`,
-  category: `text-3xl lg:text-[3rem] font-mediumSerif hover:text-[#290916]`,
+  category: `text-3xl lg:text-[3rem] font-poppins hover:text-[#290916]`,
   postsList : 'grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-5 items-start'
 }
 

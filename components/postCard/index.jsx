@@ -12,10 +12,10 @@ const styles = {
     authorImageContainer: `grid place-items-center rounded-full overflow-hidden h-[1.4rem] w-[1.4rem]`,
     postDetails: `flex-[2.5] flex flex-col`,
     detailsContainer: `flex items-center justify-between text-[#787878]`,
-    articleDetails: `my-2 text-[.6rem] md:text-[.8rem] font-mediumSerif`,
-    title: `font-bold text-base md:text-2xl lg:text-lg capitalize font-mediumSerif text-[#290916]`,
+    articleDetails: `my-2 text-[.6rem] md:text-[.8rem] font-poppins`,
+    title: `font-bold text-base md:text-2xl lg:text-lg capitalize font-poppins text-[#290916]`,
     briefing: `text-[#787878] font-italic h-[4rem] text-ellipsis overflow-hidden`,
-    category: `bg-[#F2F3F2] rounded-full font-mediumSerif`,
+    category: `bg-[#F2F3F2] rounded-full font-poppins`,
     bookmarkContainer: `cursor-pointer`,
     thumbnailContainer: `flex flex-[1.5]`
 }
