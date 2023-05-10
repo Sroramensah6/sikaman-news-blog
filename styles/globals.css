@@ -32,10 +32,21 @@ p img {
   margin-bottom: -87px;
 }
 
+p:nth-of-type(2)::first-letter  {
+  font-family: GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;
+  font-size: 3.625rem;
+  line-height: 1.15;
+  font-weight: 500;
+  --source-text-decoration-thickness: 5px;
+  float: left;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  margin-right:15px;
+  color: #C74600;
+}
+
 p em {
   display: block;
-  /* background-color: #ededed; */
-  /* color: #5a5a5a; */
   left: 0;
   padding: 10px;
   height: auto;
