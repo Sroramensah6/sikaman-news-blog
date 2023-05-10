@@ -42,7 +42,7 @@ p:nth-of-type(2)::first-letter  {
   text-transform: uppercase;
   box-sizing: border-box;
   margin-right:15px;
-  color: #C74600;
+  color: #d5982c;
 }
 
 p em {
