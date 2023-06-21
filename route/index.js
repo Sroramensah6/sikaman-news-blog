@@ -8,7 +8,7 @@ export const main_link = [
         route: '/category/nsem-ahoduo',
     },
     {
-        title: 'Apomuden',
+        title: 'Apɔmuden',
         route: '/category/apomuden',
     },
     {
@@ -16,11 +16,11 @@ export const main_link = [
         route: '/category/edwadie',
     },
     {
-        title: 'Amammreɛ',
+        title: 'Amammerɛ',
         route: '/category/amammree',
     },
     {
-        title: 'Amanɔnne',
+        title: 'Amannɔne',
         route: '/category/amanonne',
     },
     {
